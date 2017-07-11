@@ -50,21 +50,24 @@ public class MainActivity extends AppCompatActivity {
     private void doPhotoPrint() {
         PrintHelper photoPrinter = new PrintHelper(this);
         photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
+
         //this is used for print drawable image
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
 //                R.drawable.image);
 
         // get the layout in a bitmap
         Bitmap bitmap = mView.getDrawingCache();
+
+        //print
         photoPrinter.printBitmap("image.png_test_print", bitmap, new PrintHelper.OnPrintFinishCallback() {
             @Override
             public void onFinish() {
-
                 Toast.makeText(MainActivity.this, "Thank you!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
+    // code for button click
     public void onClick(View view) {
         doPhotoPrint();
     }

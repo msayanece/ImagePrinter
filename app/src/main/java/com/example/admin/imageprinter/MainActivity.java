@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         photoPrinter.printBitmap("image.png_test_print", bitmap, new PrintHelper.OnPrintFinishCallback() {
             @Override
             public void onFinish() {
-                Toast.makeText(MainActivity.this, "Printing successful!", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(MainActivity.this, "Thank you!", Toast.LENGTH_SHORT).show();
             }
         });
     }
